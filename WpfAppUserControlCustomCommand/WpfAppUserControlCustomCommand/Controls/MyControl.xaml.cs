@@ -56,5 +56,19 @@ namespace WpfAppUserControlCustomCommand.Controls
                 SetValue(TempValueProperty, value);
             }
         }
+
+        public static readonly DependencyProperty TempSetValueProperty = DependencyProperty.Register("TempSetValue", typeof(double), typeof(MyControl), new PropertyMetadata(default(double)));
+
+        public double TempSetValue
+        {
+            get
+            {
+                return (double)GetValue(TempSetValueProperty);
+            }
+            set
+            {
+                SetValue(TempSetValueProperty, value);
+            }
+        }
     }
 }

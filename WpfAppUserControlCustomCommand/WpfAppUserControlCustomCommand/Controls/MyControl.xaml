@@ -15,8 +15,10 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="30" />
             <RowDefinition />
+            <RowDefinition />
         </Grid.RowDefinitions>
         <Button Command="{Binding BtnClickCommand, ElementName=myControl}" Content="Click Me" />
         <TextBlock Grid.Row="1" Text="{Binding Path=TempValue, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:MyControl}}, Mode=TwoWay}" />
+        <TextBox Grid.Row="2" Text="{Binding Path=TempSetValue, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:MyControl}}, Mode=TwoWay}" />
     </Grid>
 </UserControl>

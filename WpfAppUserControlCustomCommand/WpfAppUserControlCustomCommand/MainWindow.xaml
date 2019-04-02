@@ -14,6 +14,6 @@
         <Binding Path="Main" Source="{StaticResource Locator}" />
     </Window.DataContext>
     <Grid>
-        <controls:MyControl BtnClickCommand="{Binding BtnCommand}" TempValue="{Binding TempValue}" />
+        <controls:MyControl BtnClickCommand="{Binding BtnCommand}" TempValue="{Binding TempValue}" TempSetValue="{Binding TempSetValue,Mode=TwoWay}" />
     </Grid>
 </Window>

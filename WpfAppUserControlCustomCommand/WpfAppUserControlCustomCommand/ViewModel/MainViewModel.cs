@@ -38,7 +38,12 @@ namespace WpfAppUserControlCustomCommand.ViewModel
             rd = new Random();
 
             BtnCommand = new RelayCommand(
-                () => { TempValue = rd.Next(0, 1000) / 10.0; });
+                () =>
+                    {
+                        var x = TempSetValue;
+                        TempValue = rd.Next(0, 1000) / 10.0;
+                        TempSetValue = TempValue;
+                    });
         }
 
         private double _tempvalue;
@@ -52,6 +57,20 @@ namespace WpfAppUserControlCustomCommand.ViewModel
             set
             {
                 Set(ref _tempvalue, value);
+            }
+        }
+
+        private double _tempSetValue;
+
+        public double TempSetValue
+        {
+            get
+            {
+                return _tempSetValue;
+            }
+            set
+            {
+                Set(ref _tempSetValue, value);
             }
         }
 
